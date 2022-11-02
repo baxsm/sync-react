@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactModal from 'react-modal'
-import {FaCheckSquare} from 'react-icons/fa'
+import { FaCheckSquare, FaSquare } from 'react-icons/fa'
 
 export default function Description() {
 
@@ -33,6 +33,18 @@ export default function Description() {
         },
     ]
 
+    const media = [
+        {
+            body: 'Analyse and evaluate your current status and productivity',
+        },
+        {
+            body: 'Begin monitoring your day to day routine with Sync app',
+        },
+        {
+            body: 'See the improved results in no more than a couple of weeks',
+        },
+    ]
+
     return (
         <>
             <div id="description" className="basic-1">
@@ -48,18 +60,16 @@ export default function Description() {
                                 <h2>Organize Your Time And Start Getting Results</h2>
                                 <p>Sync is the first mobile app on the market to harness the power of social connections to help you stop procrastinating and start getting things done. Give it a try and see the changes right away</p>
                                 <ul className="list-unstyled li-space-lg">
-                                    <li className="media">
-                                        <i className="fas fa-square"></i>
-                                        <div className="media-body">Analyse and evaluate your current status and productivity</div>
-                                    </li>
-                                    <li className="media">
-                                        <i className="fas fa-square"></i>
-                                        <div className="media-body">Begin monitoring your day to day routine with Sync app</div>
-                                    </li>
-                                    <li className="media">
-                                        <i className="fas fa-square"></i>
-                                        <div className="media-body">See the improved results in no more than a couple of weeks</div>
-                                    </li>
+                                    {
+                                        media.map((item, index) => {
+                                            return (
+                                                <li className="media d-flex align-items-center" key={index}>
+                                                    <FaSquare className='fas'/>
+                                                    <div className="media-body">{item.body}</div>
+                                                </li>
+                                            )
+                                        })
+                                    }
                                 </ul>
                                 <a className="btn-solid-reg popup-with-move-anim" onClick={toggleLightbox}>LIGHTBOX</a>
                             </div>
@@ -94,7 +104,7 @@ export default function Description() {
                                     checks.map((item, index) => {
                                         return (
                                             <li className="media d-flex align-items-center" key={index}>
-                                                <FaCheckSquare className='far'/>
+                                                <FaCheckSquare className='far' />
                                                 <div className="media-body">{item.title}</div>
                                             </li>
                                         )

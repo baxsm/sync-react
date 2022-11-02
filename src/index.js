@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/bootstrap.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './assets/style.css'
 

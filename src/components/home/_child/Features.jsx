@@ -1,6 +1,8 @@
 import React from 'react'
+import { FaCircle, FaUsers, FaCode, FaCog, FaComments, FaRocket, FaDownload } from 'react-icons/fa'
 
 export default function Features() {
+
     return (
         <>
             <div id="features" className="basic-2">

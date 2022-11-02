@@ -40,7 +40,6 @@ export default function SmallFeatures() {
                             {
                                 data.map((item, index) => {
                                     var Icon = item.icon;
-                                    console.log(Icon)
                                     return (
                                         <div className="card" key={index}>
                                             <div className={"card-image " + item.iconContainerColor}>

@@ -115,7 +115,7 @@ button {
 	border: 0.125rem solid #ff556e;
 	border-radius: 2rem;
 	background-color: #ff556e;
-	color: #fff;
+	color: #fff !important;
 	font: 700 0.875rem/0 "Open Sans", sans-serif;
 	text-decoration: none;
 	transition: all 0.2s;
@@ -124,7 +124,7 @@ button {
 .btn-solid-lg:hover {
 	border: 0.125rem solid #ff556e;
 	background-color: transparent;
-	color: #ff556e;
+	color: #ff556e !important;
 	text-decoration: none;
 }
 
@@ -992,16 +992,16 @@ screen and (-ms-high-contrast: none) {
 }
 
 /* Action Button */
-.lightbox-basic .btn-solid-reg.mfp-close {
+.btn-solid-reg {
 	position: relative;
 	width: auto;
 	height: auto;
-	color: #fff;
+	color: #fff !important;
 	opacity: 1;
 }
 
-.lightbox-basic .btn-solid-reg.mfp-close:hover {
-	color: #ff556e;
+.btn-solid-reg:hover {
+	color: #ff556e !important;
 }
 
 /* end of action Button */
@@ -2303,4 +2303,8 @@ a:hover.back-to-top {
 
 .ReactModal__Overlay--before-close {
 	opacity: 0;
+}
+
+#cedoTabs a:hover {
+	color: white !important;
 }
