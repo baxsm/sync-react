@@ -6,6 +6,7 @@ html {
 	width: 100%;
 	height: 100%;
 	user-select: none;
+	scroll-behavior: smooth;
 }
 
 body,
@@ -2343,4 +2344,8 @@ a:hover.back-to-top {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+.active-link {
+	color: #ff556e !important;
 }

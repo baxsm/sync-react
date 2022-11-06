@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export default function Header() {
 
@@ -22,6 +22,13 @@ export default function Header() {
         }
     }
 
+    const [location, setLocation] = useState(null)
+    const loc = useLocation()
+
+    useEffect(() => {
+        setLocation(loc.pathname)
+    },[loc])
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
             <div className="container">
@@ -34,41 +41,41 @@ export default function Header() {
                 <div className={isDropdownActive ? 'navbar-collapse' : 'collapse navbar-collapse'} style={{ justifyContent: 'right' }}>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <Link to='/#description' className="nav-link page-scroll">
+                            <a data-href='description' href='/#description' className="nav-link page-scroll">
                                 DESCRIPTION
-                            </Link>
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <Link to='/#features' className="nav-link page-scroll">
+                            <a data-href='features' href='/#features' className="nav-link page-scroll">
                                 FEATURES
-                            </Link>
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <Link to='/#screens' className="nav-link page-scroll">
+                            <a data-href='screens' href='/#screens' className="nav-link page-scroll">
                                 SCREENS
-                            </Link>
+                            </a>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle page-scroll" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">EXTRA</a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <Link to='/article-details' className='dropdown-item'>
-                                    <span className="item-text">ARTICLE DETAILS</span>
+                                    <span className="item-text" style={{color: location === '/article-details' ? '#ff556e' : ''}}>ARTICLE DETAILS</span>
                                 </Link>
                                 <div className="dropdown-divider"></div>
                                 <Link to='/terms-conditions' className='dropdown-item'>
-                                    <span className="item-text">TERMS CONDITIONS</span>
+                                    <span className="item-text" style={{color: location === '/terms-conditions' ? '#ff556e' : ''}}>TERMS CONDITIONS</span>
                                 </Link>
                                 <div className="dropdown-divider"></div>
                                 <Link to='/privacy-policy' className='dropdown-item'>
-                                    <span className="item-text">PRIVACY POLICY</span>
+                                    <span className="item-text" style={{color: location === '/privacy-policy' ? '#ff556e' : ''}}>PRIVACY POLICY</span>
                                 </Link>
                             </div>
                         </li>
                     </ul>
                     <span className="nav-item">
-                        <Link to='/#download' className="btn-outline-sm page-scroll">
+                        <a href='/#download' className="btn-outline-sm page-scroll">
                             DOWNLOAD
-                        </Link>
+                        </a>
                     </span>
                 </div>
             </div>

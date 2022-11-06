@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createBrowserRouter, RouterProvider, Outlet, Link } from 'react-router-dom';
 import ArticleDetails from '../components/articleDetails/ArticleDetails';
 import Footer from '../components/common/Footer';
@@ -8,6 +8,31 @@ import PrivacyPolicy from '../components/privacyPolicy/PrivacyPolicy';
 import TermsConditions from '../components/termsConditions/TermsConditions';
 
 const Layout = () => {
+
+    useEffect(function mount() {
+        const sections = document.querySelectorAll('#root div[id]');
+        function onScroll() {
+            const scrollY = window.scrollY;
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 50;
+                var sectionId = current.getAttribute('id');
+                try {
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        document.querySelector('.navbar a[data-href*=' + sectionId + ']').classList.add('active-link');
+                    }
+                    else {
+                        document.querySelector('.navbar a[data-href*=' + sectionId + ']').classList.remove('active-link');
+                    }
+                } catch (err) { }
+            });
+        }
+        window.addEventListener("scroll", onScroll);
+
+        return function unMount() {
+            window.removeEventListener("scroll", onScroll);
+        };
+    });
 
     const [visible, setVisible] = useState(false)
 
