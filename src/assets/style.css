@@ -945,7 +945,6 @@ screen and (-ms-high-contrast: none) {
 .lightbox-basic {
 	position: relative;
 	max-width: 71.875rem;
-	margin: 2.5rem auto;
 	padding: 3rem 1rem;
 	background-color: #fff;
 	text-align: left;
@@ -1473,11 +1472,11 @@ screen and (-ms-high-contrast: none) {
 /**********************************/
 /*     16. Back To Top Button     */
 /**********************************/
-a.back-to-top {
+.back-to-top {
 	position: fixed;
 	z-index: 999;
 	right: 0.75rem;
-	bottom: 0.75rem;
+	bottom: -50px;
 	display: none;
 	width: 2.625rem;
 	height: 2.625rem;
@@ -1485,6 +1484,10 @@ a.back-to-top {
 	background: #333 url("../../public/images/up-arrow.png") no-repeat center 47%;
 	background-size: 1.125rem 1.125rem;
 	text-indent: -9999px;
+}
+
+.back-to-top-show {
+	bottom: 0.75rem !important;
 }
 
 a:hover.back-to-top {

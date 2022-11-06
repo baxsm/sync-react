@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { Link } from 'react-router-dom';
 
 export default function Header() {
 
@@ -19,35 +20,48 @@ export default function Header() {
         else {
             setIsDropdrownActive('show')
         }
-        console.log(isDropdownActive)
     }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
             <div className="container">
-                <a className="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative" /></a>
-                <button className="navbar-toggler collapsed" type="button" style={{boxShadow: 'none'}}>
+                <Link to='/' className="navbar-brand logo-image">
+                    <img src="images/logo.svg" alt="alternative" />
+                </Link>
+                <button className="navbar-toggler collapsed" type="button" style={{ boxShadow: 'none' }}>
                     <span className="navbar-toggler-awesome fas" onClick={toggleDropdown}>{isDropdownActive ? <FaTimes /> : <FaBars />}</span>
                 </button>
                 <div className={isDropdownActive ? 'navbar-collapse' : 'collapse navbar-collapse'} style={{ justifyContent: 'right' }}>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <a className="nav-link page-scroll" href="#description">DESCRIPTION</a>
+                            <Link to='/#description' className="nav-link page-scroll">
+                                DESCRIPTION
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link page-scroll" href="#features">FEATURES</a>
+                            <Link to='/#features' className="nav-link page-scroll">
+                                FEATURES
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link page-scroll" href="#screens">SCREENS</a>
+                            <Link to='/#screens' className="nav-link page-scroll">
+                                SCREENS
+                            </Link>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle page-scroll" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">EXTRA</a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="article-details.html"><span className="item-text">ARTICLE DETAILS</span></a>
+                                <Link to='/article-details' className='dropdown-item'>
+                                    <span className="item-text">ARTICLE DETAILS</span>
+                                </Link>
                                 <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="terms-conditions.html"><span className="item-text">TERMS CONDITIONS</span></a>
+                                <Link to='/terms-conditions' className='dropdown-item'>
+                                    <span className="item-text">TERMS CONDITIONS</span>
+                                </Link>
                                 <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="privacy-policy.html"><span className="item-text">PRIVACY POLICY</span></a>
+                                <Link to='/privacy-policy' className='dropdown-item'>
+                                    <span className="item-text">PRIVACY POLICY</span>
+                                </Link>
                             </div>
                         </li>
                     </ul>

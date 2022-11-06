@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -20,51 +21,57 @@ export default function Footer() {
                   </li>
                   <li className="media">
                     <i className="fas fa-envelope"></i>
-                    <div className="media-body"><a href="#your-link">office@syncmobile.com</a></div>
+                    <div className="media-body"><a>office@syncmobile.com</a></div>
                   </li>
                   <li className="media">
                     <i className="fas fa-phone-alt"></i>
-                    <div className="media-body"><a href="#your-link">+44 376 945 23</a></div>
+                    <div className="media-body"><a>+44 376 945 23</a></div>
                   </li>
                 </ul>
               </div>
               <div className="footer-col third">
                 <h5>Value Links</h5>
                 <ul className="list-unstyled li-space-lg p-small">
-                  <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                  <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                  <li><a href="article-details.html">Article Details</a></li>
+                  <li>
+                    <Link to='/terms-conditions'>Terms & Conditions</Link>
+                  </li>
+                  <li>
+                    <Link to='/privacy-policy'>Privacy Policy</Link>
+                  </li>
+                  <li>
+                    <Link to='/article-details'>Article Details</Link>
+                  </li>
                 </ul>
               </div>
               <div className="footer-col fourth">
                 <h5>Other Apps</h5>
                 <ul className="list-unstyled li-space-lg p-small">
-                  <li><a href="#your-link">Scientific Calculator</a></li>
-                  <li><a href="#your-link">Advanced Timer</a></li>
-                  <li><a href="#your-link">Music Store</a></li>
+                  <li><a>Scientific Calculator</a></li>
+                  <li><a>Advanced Timer</a></li>
+                  <li><a>Music Store</a></li>
                 </ul>
               </div>
               <div className="footer-col fifth">
                 <span className="fa-stack">
-                  <a href="#your-link">
+                  <a>
                     <i className="fas fa-circle fa-stack-2x"></i>
                     <i className="fab fa-facebook-f fa-stack-1x"></i>
                   </a>
                 </span>
                 <span className="fa-stack">
-                  <a href="#your-link">
+                  <a>
                     <i className="fas fa-circle fa-stack-2x"></i>
                     <i className="fab fa-twitter fa-stack-1x"></i>
                   </a>
                 </span>
                 <span className="fa-stack">
-                  <a href="#your-link">
+                  <a>
                     <i className="fas fa-circle fa-stack-2x"></i>
                     <i className="fab fa-pinterest-p fa-stack-1x"></i>
                   </a>
                 </span>
                 <span className="fa-stack">
-                  <a href="#your-link">
+                  <a>
                     <i className="fas fa-circle fa-stack-2x"></i>
                     <i className="fab fa-instagram fa-stack-1x"></i>
                   </a>
@@ -78,7 +85,7 @@ export default function Footer() {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <p className="p-small">Copyright © 2022 <a href="https://github.com/baxsm" target='_blank' referrerPolicy='no-referrer'><i style={{color: 'gray'}}>B A X S M</i></a> - All rights reserved</p>
+              <p className="p-small">Copyright © 2022 <a href="https://github.com/baxsm" target='_blank' referrerPolicy='no-referrer'><i style={{ color: 'gray' }}>B A X S M</i></a> - All rights reserved</p>
             </div>
           </div>
         </div>

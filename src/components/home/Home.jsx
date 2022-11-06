@@ -10,19 +10,20 @@ import Statistics from './_child/Statistics'
 import Download from './_child/Download'
 
 function Home() {
-  return (
-    <>
-      <Banner />
-      <SmallFeatures />
-      <Description />
-      <TabbedDescription />
-      <Features />
-      <Screenshots />
-      <Testimonials />
-      <Statistics />
-      <Download />
-    </>
-  )
+    
+    return (
+        <>
+            <Banner />
+            <SmallFeatures />
+            <Description />
+            <TabbedDescription />
+            <Features />
+            <Screenshots />
+            <Testimonials />
+            <Statistics />
+            <Download />
+        </>
+    )
 }
 
 export default Home
