@@ -1,6 +1,6 @@
 # Sync Website
 
-Live - 
+Live - https://sync-react.vercel.app/
 
 - React
 - Fontawesome
