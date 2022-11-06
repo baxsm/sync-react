@@ -1205,7 +1205,6 @@ screen and (-ms-high-contrast: none) {
 
 .slider .swiper-button-prev:focus,
 .slider .swiper-button-next:focus {
-	/* even if you can't see it chrome you can see it on mobile device */
 	outline: none;
 }
 
@@ -2275,12 +2274,28 @@ a:hover.back-to-top {
 	position: sticky;
 	width: 80vw;
 	margin: 0 auto;
-
 	border: 1px solid #ccc;
 	background: #fff;
 	overflow: auto;
 	border-radius: 4px;
 	outline: none;
+	z-index: 9999999;
+	max-height: 100vh;
+}
+
+.reactModal2 {
+	border: none !important;
+	background: transparent !important;
+}
+
+.reactModal2 .image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.reactModal2 img {
+	max-height: 100vh;
 }
 
 .modalOverlay {
@@ -2290,6 +2305,7 @@ a:hover.back-to-top {
 	right: 0;
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.75);
+	z-index: 99999999999999999;
 }
 
 .ReactModal__Overlay {
@@ -2307,4 +2323,21 @@ a:hover.back-to-top {
 
 #cedoTabs a:hover {
 	color: white !important;
+}
+
+.close p {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    color: #f1f1f1;
+    font-weight: bold;
+    transition: 0.3s;
+	font-size: 3rem;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }

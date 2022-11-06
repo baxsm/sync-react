@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from "swiper";
 import { Pagination } from "swiper"
 import SwiperCore, { Autoplay } from 'swiper';
 import 'swiper/css';
 import "swiper/css/navigation";
+import ReactModal from 'react-modal'
 
 export default function Screenshots() {
 
@@ -43,6 +44,22 @@ export default function Screenshots() {
         },
     ]
 
+    const [image, setImage] = useState(null)
+    const [isModalActive, setIsModalActive] = useState(false)
+
+    const closeModal = () => {
+        setIsModalActive(false)
+    }
+
+    const openModal = () => {
+        setIsModalActive(true)
+    }
+
+    const setImageModal = (img) => {
+        setImage(img)
+        openModal()
+    }
+
     return (
         <>
             <div id="screens" className="slider">
@@ -66,7 +83,7 @@ export default function Screenshots() {
                                         return (
                                             <SwiperSlide key={index}>
                                                 <a className="popup-link" data-effect="fadeIn">
-                                                    <img className="img-fluid" src={item.image} alt="alternative" />
+                                                    <img className="img-fluid" src={item.image} alt="alternative" onClick={() => setImageModal(item.image)}/>
                                                 </a>
                                             </SwiperSlide>
                                         )
@@ -77,6 +94,23 @@ export default function Screenshots() {
                     </div>
                 </div>
             </div>
+            <ReactModal
+                isOpen={isModalActive}
+                onRequestClose={closeModal}
+                className="reactModal2"
+                overlayClassName="modalOverlay"
+                closeTimeoutMS={500}
+                ariaHideApp={false}
+            >
+                <div className="d-flex justify-content-center align-items-center zindex-modal">
+                    <div className="close">
+                        <p onClick={() => closeModal()}>&times;</p>
+                    </div>
+                    <div className="image">
+                        <img src={image} alt="" />
+                    </div>
+                </div>
+            </ReactModal>
         </>
     )
 }
