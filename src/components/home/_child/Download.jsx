@@ -11,8 +11,8 @@ export default function Download() {
                                 <img className="img-fluid" src="images/download-iphone.png" alt="alternative" />
                             </div>
                             <p className="p-large">Do you feel like you're wasting time with small stuff instead of working towards your goals? Start using Sync to organize your time and get a grip on your personal development</p>
-                            <a className="btn-solid-lg" href="#your-link"><i className="fab fa-apple"></i>DOWNLOAD</a>
-                            <a className="btn-solid-lg" href="#your-link"><i className="fab fa-google-play"></i>DOWNLOAD</a>
+                            <a className="btn-solid-lg"><i className="fab fa-apple"></i>DOWNLOAD</a>
+                            <a className="btn-solid-lg"><i className="fab fa-google-play"></i>DOWNLOAD</a>
                         </div>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import Heading from '../common/Heading'
 
 export default function ArticleDetails() {
 
-    const title = 'Details About Our Article'
+    const title = 'Article Details'
 
     return (
         <>
@@ -29,7 +29,7 @@ const Content = () => {
                         <div className="text-container">
                             <h3>Business Analysis And Reporting Tools</h3>
                             <p>Sync also automatically collects and receives certain information from your computer or mobile device, including the activities you perform on our Website, the Platforms, and the Applications, the type of hardware and software you are using (for example, your operating system or browser), and information obtained from cookies. For example, each time you visit the Website or otherwise use the Services, we automatically collect your IP address, browser and device type, access times, the web page from which you came, the regions from which you navigate the web page, and the web page(s) you access (as applicable).</p>
-                            <p>When you first register for a Sync account, and when you use the Services, we collect some <a href="#your-link">Personal Information</a> about you such as:</p>
+                            <p>When you first register for a Sync account, and when you use the Services, we collect some <a>Personal Information</a> about you such as:</p>
                             <div className="row">
                                 <div className="col-md-6">
                                     <ul className="list-unstyled li-space-lg">

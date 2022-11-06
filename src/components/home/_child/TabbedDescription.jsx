@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaCheckSquare, FaSquare, FaClock, FaList, FaCalendarAlt } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 export default function TabbedDescription() {
 
@@ -93,7 +94,9 @@ export default function TabbedDescription() {
                                                 })
                                             }
                                         </ul>
-                                        <a className="btn-solid-reg page-scroll" href="terms-conditions.html">TERMS</a> <a className="btn-outline-reg page-scroll" href="privacy-policy.html">PRIVACY</a>
+                                        <Link to='/terms-condition' className="btn-solid-reg page-scroll">TERMS</Link>
+                                        {" "}
+                                        <Link to='/privacy-policy' className="btn-outline-reg page-scroll">PRIVACY</Link>
                                     </div>
                                     <div className={activeTab === 'tracking' ? 'tab-pane fade show active' : 'tab-pane fade'}>
                                         {
@@ -106,7 +109,7 @@ export default function TabbedDescription() {
                                                 )
                                             })
                                         }
-                                        <a className="red" href="terms-conditions.html">Terms & Conditions {'>>'}</a>
+                                        <Link to='/terms-condition' className="red">Terms & Conditions {'>>'}</Link>
                                     </div>
                                     <div className={activeTab === 'organize' ? 'tab-pane fade show active' : 'tab-pane fade'}>
                                         <p><strong>Use the power of social interactivity</strong> to keep you motivated and focused on your daily and long term goals. It's revolutionary</p>

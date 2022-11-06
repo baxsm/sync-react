@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ReactModal from 'react-modal'
 import { FaCheckSquare, FaSquare } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 export default function Description() {
 
@@ -111,7 +112,7 @@ export default function Description() {
                                     })
                                 }
                             </ul>
-                            <a className="btn-solid-reg mfp-close page-scroll" href='#download' onClick={toggleLightbox}>DOWNLOAD</a>
+                            <Link to='/#download' className="btn-solid-reg mfp-close page-scroll" onClick={toggleLightbox}>DOWNLOAD</Link>
                             <button className="btn-outline-reg mfp-close as-button" type="button" onClick={toggleLightbox}>BACK</button>
                         </div>
                     </div>

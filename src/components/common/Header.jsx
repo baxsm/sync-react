@@ -66,7 +66,9 @@ export default function Header() {
                         </li>
                     </ul>
                     <span className="nav-item">
-                        <a className="btn-outline-sm page-scroll" href="#download">DOWNLOAD</a>
+                        <Link to='/#download' className="btn-outline-sm page-scroll">
+                            DOWNLOAD
+                        </Link>
                     </span>
                 </div>
             </div>

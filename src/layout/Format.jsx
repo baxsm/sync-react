@@ -1,24 +1,41 @@
-import React from 'react'
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import React, { useState } from 'react'
+import { createBrowserRouter, RouterProvider, Outlet, Link } from 'react-router-dom';
 import ArticleDetails from '../components/articleDetails/ArticleDetails';
-import Footer from '../components/home/common/Footer';
-import Header from '../components/home/common/Header';
+import Footer from '../components/common/Footer';
+import Header from '../components/common/Header';
 import Home from '../components/home/Home';
+import PrivacyPolicy from '../components/privacyPolicy/PrivacyPolicy';
+import TermsConditions from '../components/termsConditions/TermsConditions';
 
 const Layout = () => {
-    window.addEventListener('scroll', function () {
-        try {
-            const header = this.document.querySelector("#scrollToTop");
-            header.classList.toggle("back-to-top-show", this.window.scrollY > 100);
-        } catch (err) { }
-    })
+
+    const [visible, setVisible] = useState(false)
+
+    const toggleVisible = () => {
+        const scrolled = document.documentElement.scrollTop;
+        if (scrolled > 300) {
+            setVisible(true)
+        }
+        else if (scrolled <= 300) {
+            setVisible(false)
+        }
+    };
+
+    window.addEventListener('scroll', toggleVisible)
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
 
     return (
         <>
             <Header />
             <Outlet />
             <Footer />
-            <a href='#' className="back-to-top page-scroll" id="scrollToTop" style={{ display: 'inline' }}>Back to Top</a>
+            <Link to='#' className="back-to-top page-scroll" onClick={scrollToTop} style={{ display: visible ? 'inline' : 'none' }} >Back to Top</Link>
         </>
     )
 }
@@ -35,6 +52,14 @@ const router = createBrowserRouter([
             {
                 path: '/article-details',
                 element: <ArticleDetails />
+            },
+            {
+                path: '/terms-conditions',
+                element: <TermsConditions />
+            },
+            {
+                path: '/privacy-policy',
+                element: <PrivacyPolicy />
             },
         ],
     },
