@@ -72,11 +72,9 @@ export default function Screenshots() {
                                 grabCursor={true}
                                 className="slider-container"
                                 loop={true}
-                                navigation={true} 
                                 autoplay={{
                                     delay: 2000
                                 }}
-                                modules={[Navigation]}
                             >
                                 {
                                     screens.map((item, index) => {
